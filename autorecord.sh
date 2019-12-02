@@ -43,7 +43,7 @@ if [[ $playback == "yes" ]];
 then
     arecord --buffer-time=2000000 -f dat - | tee $filename.wav | aplay --buffer-time=2000000 -f dat -
 else
-    arecord --buffer-time=2000000 -f dat - | tee $filename.wav
+    arecord --buffer-time=2000000 -f dat - | tee $filename.wav > /dev/null
 fi
 echo "Recording ended."
 sleep 0.3
